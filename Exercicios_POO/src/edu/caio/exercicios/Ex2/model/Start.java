@@ -17,7 +17,7 @@ public class Start
 		
 		String opcao = "";
 		final String FALSO = "NÃO";
-		final String VERDADEIRO = "NÃO";
+		final String VERDADEIRO = "SIM";
 		String isOrNot = "";
 		
 		while(true) 
@@ -71,6 +71,8 @@ public class Start
 			
 			
 			System.out.println("1 - Sacar dinheiro.");
+			System.out.println("2 - Depositar dinheiro.");
+			System.out.println("3 - consultar Saldo");
 			opcao = input.next();
 			
 			switch(opcao) {
@@ -88,7 +90,27 @@ public class Start
 					System.out.println("Saque Realizado no valor de " + valorAretirar);
 					System.out.println("Seu novo saldo é de : " + conta.getSaldo()); 
 				}
+				System.out.println("\n----------------------");
+				break;
+			case "2" :
+				double valorAdepositar = 0;
+				System.out.println("qunato deseja depositar : ");
+				valorAdepositar = input.nextDouble();
+				conta.setSaldo(conta.getSaldo() + valorAdepositar);
+				System.out.println("------------------------");
+				System.out.println(conta.getSaldo());
+				System.out.println("\n----------------------");
+				break;
+			
+			case "3":
+				System.out.println("----------------------");
+				System.out.println("----Saldo da Conta----");
+				System.out.println("R$ : " + conta.getSaldo());
+				System.out.println("----------------------");
+				System.out.println("\n----------------------");
+				break;
 			}
+			
 			
 		}
 	
